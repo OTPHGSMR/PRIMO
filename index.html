@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>PRIMO - Primecare Integrated Management Operations</title>
+  <meta name="theme-color" content="#0b2544">
+
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="logo-192.png">
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { margin:0; padding:0; width:100%; height:100%; background:#0b2544; overflow:hidden; }
+    .iframe-container { width:100%; height:100vh; height:100dvh; overflow:hidden; }
+    iframe { display:block; width:100%; height:100%; border:none; background:#f6f9fc; }
+  </style>
+</head>
+<body>
+  <div class="iframe-container">
+    <iframe id="app"
+      allowfullscreen
+      allow="fullscreen; camera; microphone; display-capture; geolocation;">
+    </iframe>
+  </div>
+
+  <script>
+    // Teruskan ?page=xxx dari URL GitHub ke Apps Script
+    var BASE = 'https://script.google.com/macros/s/AKfycbyKhcAHFiAxbJuNJNhAcwat7xmtn1IFbr3m8KdsvXa6rZTbdpAA3tjr-PXZKuXLOS3b/exec';
+    var page = new URLSearchParams(location.search).get('page');
+    document.getElementById('app').src = page ? BASE + '?page=' + encodeURIComponent(page) : BASE;
+  </script>
+</body>
+</html>
