@@ -26,10 +26,9 @@
   </div>
 
   <script>
-    // Teruskan ?page=xxx dari URL GitHub ke Apps Script
     var BASE = 'https://script.google.com/macros/s/AKfycbzDTB_gsIxLYfcmQao18afZt9OZ3eLx50XvTlmEGoqc0tbgmUPF5JN9oC0HK5486lc/exec';
     var page = new URLSearchParams(location.search).get('page');
-    location.replace(page ? BASE + '?page=' + encodeURIComponent(page) : BASE);
+    document.getElementById('app').src = page ? BASE + '?page=' + encodeURIComponent(page) : BASE;
   </script>
 </body>
 </html>
